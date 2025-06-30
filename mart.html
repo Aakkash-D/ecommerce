@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vehicle Mart</title>
+  <link rel="stylesheet" href="automt.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">AutoCareMart</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="#" onclick="viewCart()">🛒 (<span id="cart-count">0</span>)</a></li>
+    </ul>
+  </nav>
+
+  <section class="products">
+    <h2>Vehicle Accessories</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="data:image/png;base64,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"  style="width:100px;height:100px;">
+        <h3>Engine Oil</h3>
+        <p>₹799</p>
+        <button onclick="addToCart('Engine Oil', 799)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <h3>Car Battery</h3>
+        <p>₹2999</p>
+        <button onclick="addToCart('Car Battery', 2999)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <h3>Wiper Blade</h3>
+        <p>₹499</p>
+        <button onclick="addToCart('Wiper Blade', 499)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <h3>Brake Pads</h3>
+        <p>₹899</p>
+        <button onclick="addToCart('Brake Pads', 899)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Explore more accessories and keep your vehicle fit!</p>
+  </footer>
+
+  <script src="js/cart.js"></script>
+</body>
+</html>
